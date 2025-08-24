@@ -350,6 +350,7 @@ section a:hover {
 @media (max-width: 1024px) {
   .main-title {
     font-size: 2rem;
+    padding: 20px;
   }
   .nav-links li a {
     font-size: 1rem;
@@ -360,11 +361,11 @@ section a:hover {
 @media (max-width: 800px) {
   .nav-links {
     position: fixed;
-    top: 0;
+    top: 10px;
     right: -100%;
     height: auto;
-    width: 60%;
-    background: #222;
+    width: 100%;
+    background: linear-gradient(#a5f3a7, #01160b);
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -389,6 +390,7 @@ section a:hover {
 @media (max-width: 480px) {
   .main-title {
     font-size: 1.5rem;
+    padding: 20px;
   }
   section {
     padding: 15px;
@@ -397,6 +399,6 @@ section a:hover {
     font-size: 1.2rem;
   }
   .nav-links {
-    width: 80%; /* wider menu on tiny screens */
+    width: 100%; /* wider menu on tiny screens */
   }
 }
