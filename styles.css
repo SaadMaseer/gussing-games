@@ -8,7 +8,8 @@ body {
     display: grid;
     grid-template-columns: repeat(4, minmax(200px, 1fr));
     grid-template-rows: auto 1fr auto;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 10px;
     grid-template-areas:
         "header header header header"
         "main main main main"
@@ -17,8 +18,8 @@ body {
 
 main {
     grid-area: main;
-    background-color: #f0f0f0;
-    border: 2px solid #ccc;
+    
+    padding: 20px;
 }
 
 footer {
@@ -27,27 +28,55 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #157518;
+    background: linear-gradient(#a5f3a7, #01160b);
     border: green ridge 2px;
+    color: white;
 }
 
-.header,
-.main,
-.footer {
-    padding: 20px;
-}
+
 
 header {
     grid-area: header;
     color: white;
-    padding: 10px 0;
+    padding: 10px;
     text-align: center;
-    border: green ridge 10px;
-    background: linear-gradient(90deg, #27f12e, #a0e5a0);
+    
+    
+}
+
+/* ========= Sections ========= */
+section {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+section h2 {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+section p {
+  margin-bottom: 10px;
+  color: #555;
+  line-height: 1.6;
+}
+
+section a {
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+section a:hover {
+  text-decoration: underline;
 }
 
 .main-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     margin-bottom: 10px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 5px;
@@ -204,10 +233,17 @@ header {
     justify-content: space-between;
     padding: 10px 20px;
     align-items: center;
-    background-color: #157518;
+    background:linear-gradient(#a5f3a7, #01160b);
     border: salmon ridge 2px;
 
 }
+
+#home {
+    color: white;
+    font-weight: bold;
+}
+
+
 
 .logo {
     width: 70px;
@@ -247,4 +283,120 @@ header {
     color: #fa8500;
     border-radius: 5px;
     transition: 0.3s;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* @media  (max-width: 800px) {
+    body {
+        grid-template-rows: auto 1fr auto;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "main"
+            "footer";
+           
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 130px;
+        height: auto;
+        margin: 20px 0;
+        padding: 5px;
+        right: -100%;
+        flex-direction: column;
+        background-color: #01160b;
+        width: 100%;
+        transition: right 0.3s ease-in-out;
+        text-align: center;
+        
+    }
+    .main-nav li a {
+        color: white;
+        font-size: 1rem;
+        
+        
+    }
+
+    #home {
+        color: white;
+        font-weight: bold;
+    }
+
+    .nav-links.show {
+        right: 0;
+    }
+
+    .main-title {
+        font-size: 1rem;
+    }
+    
+
+   
+} */
+
+/* ========= Responsive ========= */
+
+/* Tablets and down */
+@media (max-width: 1024px) {
+  .main-title {
+    font-size: 2rem;
+  }
+  .nav-links li a {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile menu */
+@media (max-width: 800px) {
+  .nav-links {
+    position: fixed;
+    top: 10%;
+    right: -100%;
+    height: auto;
+    width: 60%;
+    background: #222;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    transition: right 0.3s ease-in-out;
+  }
+
+  .nav-links.show {
+    left: 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .logo {
+    width: 60px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 1.5rem;
+  }
+  section {
+    padding: 15px;
+  }
+  section h2 {
+    font-size: 1.2rem;
+  }
+  .nav-links {
+    width: 80%; /* wider menu on tiny screens */
+  }
 }
